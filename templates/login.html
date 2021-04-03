@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>login page</title>
+{% endblock title %}
+
+
+{% block body %}
+{% for  message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Message</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+<h1 class='text-center my-3'>Login page</h1>
+<div class="container">
+
+<form action= 'login' method='POST'>
+{% csrf_token %}
+  
+  <div class="form-row">
+    </div>
+  <div class="form-group">
+    <label for="inputAddress">Username</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Enter your username" name='username'>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputCity">Password</label>
+      <input type="password" class="form-control" id="password1" name='password'>
+    </div>
+    
+
+</div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+{% endblock body %}
